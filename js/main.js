@@ -130,6 +130,13 @@ function run() {
 
   tlast = (new Date()).getTime();
   running = true;
+  document.getElementById("break-minus").disabled = true;
+  document.getElementById("break-time").disabled = true;
+  document.getElementById("break-plus").disabled = true;
+
+  document.getElementById("work-minus").disabled = true;
+  document.getElementById("work-time").disabled = true;
+  document.getElementById("work-plus").disabled = true;
   requestAnimationFrame(update);
 }
 
@@ -145,10 +152,17 @@ function stop() {
   $workT.text(25);
   $breakT.text(5);
   $('#progress').waterbubble({
-    data: 0.0,
+    data: 10.0,
     animation: false,
     waterColor: 'rgba(25, 139, 201, 1)',
   });
+  document.getElementById("break-minus").disabled = false;
+  document.getElementById("break-time").disabled = false;
+  document.getElementById("break-plus").disabled = false;
+
+  document.getElementById("work-minus").disabled = false;
+  document.getElementById("work-time").disabled = false;
+  document.getElementById("work-plus").disabled = false;
 }
 
 var bStart = document.getElementById('start');
